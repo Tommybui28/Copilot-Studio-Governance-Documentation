@@ -167,7 +167,7 @@ Licence alone does NOT control publishing
 
 ---
 
-## ummary
+## Summary
 
 - Bots are **free to create and publish**  
 - Credits are only used when **someone chats with the bot**  
