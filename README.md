@@ -10,9 +10,12 @@
 - [ ] Confirm if users are re-added via **security group / Entra group**
 - [ ] Check if **Environment Maker** is assigned to a group
 - [ ] Validate **Default environment behaviour**
+
 - [ ] Test: Can Environment Makers share to:
   - Individuals ✅
   - Security groups ✅
   - Org-wide ❌ (requires admin → `prvAssignRole`
+    
 - [ ] Credit usage on bots
 - [ ] Credit to Money conversion
+- [ ] Cancel Trial recurring subscription
