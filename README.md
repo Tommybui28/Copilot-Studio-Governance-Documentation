@@ -1,4 +1,4 @@
-# Copilot Studio – Admin Notes
+# Copilot Studio
 
 ## 📌 Contents
 - [Admin Guide](Administration%20Guide.md)
