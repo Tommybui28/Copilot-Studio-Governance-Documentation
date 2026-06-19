@@ -1,5 +1,25 @@
 # Copilot Studio Governance Summary
 
+## Copilot Capability Comparison
+
+| Capability | M365 Copilot Users | Copilot Studio (No License / Trial) | Copilot Studio (Licensed / Full) |
+|-----------|------------------|-------------------------------------|----------------------------------|
+| Access to Copilot Studio | ✅ Yes (via Copilot experience) | ⚠️ Limited (trial only) | ✅ Full access |
+| Create agents | ✅ Yes (basic agents) | ✅ Yes (trial) | ✅ Yes (full capabilities) |
+| Publish agents | ⚠️ Limited (mainly internal) | ❌ No | ✅ Yes |
+| Agent complexity | Low (Q&A, lightweight) | Medium (trial testing only) | High (full workflows, actions, integrations) |
+| Uses Dataverse environments | ❌ No | ✅ Yes | ✅ Yes |
+| Environment governance (DLP, roles) | ❌ No | ✅ Limited | ✅ Full |
+| Share to individuals/groups | ✅ Yes (internal) | ❌ No (trial) | ✅ Yes |
+| Share to whole organisation | ❌ Limited | ❌ No | ✅ Yes (admin-controlled) |
+| External / website publishing | ❌ No | ❌ No | ✅ Yes |
+| Automation / connectors / APIs | ❌ Limited | ⚠️ Limited | ✅ Full |
+| Copilot Credit usage | ⚠️ Often no (internal scenarios) | ❌ No real usage | ✅ Yes (runtime-based) |
+| Cost impact | Low | None | High (depends on usage) |
+| Governance requirement | Low | Low | High (must be controlled) |
+
+---
+
 ## M365 Copilot users – what they can do
 
 - Use Copilot in Word, Excel, Teams, etc.
