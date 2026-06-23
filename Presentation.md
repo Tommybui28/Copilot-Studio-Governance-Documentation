@@ -37,9 +37,11 @@ The lightweight, declarative agent created from inside M365 Copilot Chat ("+ Cre
 2. **Media & PR email triage agent** – sift large volumes of inbound emails.
 
 ### Are these overkill for Copilot Studio?
-- **Request 1 (handbook Q&A): No, this is a textbook Copilot Studio use case.** Agent Builder will struggle because she needs reasoning + tuned orchestration. Copilot Studio supports the **reasoning / deep thinking** toggle (premium AI tools meter).  [3](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management)
-- **Request 2 (email triage): No, but it's the *expensive* end of Copilot Studio.** It requires an **autonomous agent** with triggers, actions, and likely Power Automate flows — fine technically, but every autonomous trigger is **25 credits** regardless of M365 Copilot licensing. Needs a proper cost model before build.  [4](https://samexpert.com/copilot-studio-licensing-guide/)
 
+- **Request 1 (handbook Q&A): No — but it does *not* need deep reasoning.** This is a classic **RAG (retrieval) problem**, not a reasoning problem. A standard Copilot Studio agent with a **generative answer (2 credits)** grounded on the handbook is the right tool. Sadie's "erratic results" are far more likely caused by **knowledge source scoping, weak system prompt, or missing fallback topic** than by the model not "thinking hard enough." Fix grounding first; only consider the reasoning toggle if accuracy is still poor on genuinely ambiguous questions.  [1](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management)
+- **Request 2 (email triage): No, but it's the *expensive* end of Copilot Studio.** It requires an **autonomous agent** with triggers, actions, and likely Power Automate flows — fine technically, but every autonomous trigger is **25 credits** regardless of M365 Copilot licensing. Needs a proper cost model and DPIA before build. [2](https://samexpert.com/copilot-studio-licensing-guide/)
+
+> **Verdict:** Neither is overkill — but Request 1 needs **better configuration, not a bigger model**, and Request 2 needs **governance, scoping, and AI Engineer review** before rollout.
 > **Verdict:** Not overkill — but Request 2 needs governance, scoping, and an AI engineer review before rollout.
 
 ---
@@ -155,3 +157,28 @@ Source: [Microsoft Learn – Billing rates](https://learn.microsoft.com/en-us/mi
 - ⚠️ **Email triage agent**: pilot only, autonomous + cost-capped, AI Engineer must review. Consider Cowork as an alternative for individual analysts before committing to an autonomous Studio build.
 - 🛡️ IT to own platform & publishing; AI Engineer gates org-wide release; quarterly review of all agents.
 - 💰 Stay on **PAYG** until 60-day usage baseline exists, then evaluate P3 tier for discount. [2](https://www.linkedin.com/pulse/beginners-guide-copilot-credits-formerly-known-tiffany-songvilay-rgtjc)
+
+---
+
+### Request 1 — Comms handbook bot
+- Comms staff = M365 Copilot licensed ✅
+- Published to Teams / M365 Copilot Chat ✅
+- Interactive (users ask questions) ✅
+- Standard generative answer + SharePoint grounding ✅
+- → **$0 per interaction**
+
+### Request 2 — Media & PR email triage bot
+- Even if Media & PR staff are licensed, the bot is **autonomous** — it triggers itself when emails arrive
+- → **25 credits per email, always charged** (~$1,800+/month at 200 emails/day)
+- The B2E waiver does **not** apply
+
+## Who can access Copilot Studio?
+
+| Capability | M365 Copilot user (no extra Studio licence) | Copilot Studio licensed user |
+|---|---|---|
+| **Use** agents published by makers | ✅ Yes (free, B2E) | ✅ Yes |
+| **Build agents in Agent Builder** (lightweight, inside M365 Copilot Chat) | ✅ Yes — included | ✅ Yes |
+| **Build agents in full Copilot Studio** (topics, flows, actions, knowledge sources) | ✅ Yes — *access is included*, but… | ✅ Yes |
+| **Publish agents that consume credits beyond the M365 Copilot included usage** | ⚠️ Requires tenant to have a credit source (PAYG / pack / P3) | ✅ Yes |
+| **Use premium connectors, custom connectors, Dataverse storage** | ⚠️ Needs Power Platform premium / Dataverse capacity | ✅ Yes (depending on licence tier) |
+| **Publish to external channels** (web, WhatsApp, etc.) | ❌ Not included | ✅ Yes |
